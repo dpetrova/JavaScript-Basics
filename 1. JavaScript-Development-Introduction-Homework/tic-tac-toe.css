@@ -1,0 +1,21 @@
+
+body{
+    text-align:center;
+}
+
+.box{
+    text-align:left;
+    width:auto;
+    height:auto;
+}
+
+h1{
+    position:relative;
+}
+
+canvas {
+    border:1px solid black;
+    position:relative;
+}
+
+

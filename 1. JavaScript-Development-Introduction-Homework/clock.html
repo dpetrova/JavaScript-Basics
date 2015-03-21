@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Clock</title>
+    <style>
+        #wrapper{
+            width: 300px;
+            margin: 0 auto;
+            font: bold 15px Verdana;
+            text-align: center;
+        }
+        span {
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <p>The current time is:</p>
+        <span id="time"></span>
+    </div>
+    <script>
+        function checkTime(i) {
+            if (i < 10) {
+                i = "0" + i;
+            }
+            return i;
+        }
+
+        function startTime() {
+            var today = new Date();
+            var hours = today.getHours();
+            var minutes = today.getMinutes();
+            var seconds = today.getSeconds();
+            // add a zero in front of numbers<10
+            hours = checkTime(hours);
+            minutes = checkTime(minutes);
+            seconds = checkTime(seconds);
+            document.getElementById('time').innerHTML = hours + ":" + minutes + ":" + seconds;
+            t = setTimeout(function() {
+                startTime()
+            }, 500);
+        }
+        startTime();
+    </script>
+</body>
+</html>
